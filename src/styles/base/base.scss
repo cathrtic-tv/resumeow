@@ -1,0 +1,27 @@
+@use "../_mixins" as *;
+
+#__vue-devtools-container__ {
+    display: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+#app {
+    font-size: var(--txt__body);
+    color: var(--clr__text-base);
+    background: var(--clr__background-base);
+}

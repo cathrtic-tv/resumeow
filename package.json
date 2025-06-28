@@ -1,0 +1,31 @@
+{
+    "name": "resumeow",
+    "version": "01.00.00",
+    "description": "",
+    "author": "CathRTic",
+    "type": "module",
+    "scripts": {
+        "dev": "node node_dev/main --env='.env'"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^5.2.1",
+        "autoprefixer": "^10.4.20",
+        "chalk": "^5.4.1",
+        "color": "^5.0.0",
+        "dotenv": "^16.5.0",
+        "fs-extra": "^11.3.0",
+        "glob": "^11.0.2",
+        "json5": "^2.2.3",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.49",
+        "puppeteer": "^24.6.1",
+        "sass": "^1.83.1",
+        "sass-loader": "^16.0.4",
+        "strip-ansi": "^7.1.0",
+        "vite": "^6.0.5",
+        "vite-plugin-vue-devtools": "^7.6.8",
+        "vue": "^3.5.13",
+        "vue-router": "^4.5.0",
+        "yargs": "^17.7.2"
+    }
+}

@@ -1,0 +1,77 @@
+{
+    // --------------------------------------------------------------------------------
+    // ----- About
+    "about": {
+        "details": [
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+            "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+        ],
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Aside Content
+    "asideSections": {
+        "20_skills": {
+            "subsections": {
+                "0031_training": {
+                    "title": "Training",
+                    "details": [
+                        { "label": "Pellentesque Vehicula", },
+                        { "label": "Nulla A Orci", },
+                        { "label": "Phasellus Maximus II", },
+                        { "label": "Curabitur", },
+                    ],
+                },
+            },
+        },
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Main Content
+    "mainSections": {
+        "30_experiences": {
+            "subsections": {
+                "XX2X-XX_alfa-acta": {
+                    "details": [
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                    ],
+                },
+            },
+        },
+        "11_achievements": {
+            "title": "Achievements",
+            "icon": "Material_Design_Icons/trophy.svg",
+            "subsections": {
+                "XX1X-XX_the-finals": {
+                    "date": "Season 6 | XX1X - XXXX",
+                    "title": "THE FINALS Official Sponsor",
+                    "company": "",
+                    "location": "",
+                    "locationType": "",
+                    "link": "https://www.reachthefinals.com",
+                    "linkLabel": "reachthefinals.com",
+                    "details": [
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                    ],
+                },
+            },
+        },
+        "10_education": {
+            "subsections": {
+                "XX0X-XX_college": {
+                    "date": "XX0X - XXXX",
+                    "title": "Donec Viverra Et Aspernatur",
+                    "company": "Lacus Imperdiet, College",
+                    "location": "Somewhere, There",
+                    "locationType": "",
+                    "link": "https://example.edu",
+                    "linkLabel": "example.edu",
+                    "details": [
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                    ],
+                },
+            },
+        },
+    },
+}

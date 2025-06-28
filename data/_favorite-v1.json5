@@ -1,0 +1,25 @@
+{
+    // --------------------------------------------------------------------------------
+    // ----- About
+    "about": {
+        "phone": "",
+        "phoneLabel": "(##) ### ### ###",
+        "details": [
+            "Praesent ullamcorper cursus ante eu vehicula. Sed ut dapibus nibh, sed pulvinar mauris. Fusce viverra maximus malesuada.",
+            "Vivamus lacus dui, pellentesque sed quam pharetra, pulvinar porta erat. Etiam aliquet vel purus nec vehicula. Maecenas consequat facilisis mauris sit amet condimentum",
+        ],
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Aside Content
+    "asideSections": {
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Main Content
+    "mainSections": {
+        "20_projects": {
+            "subsections": {
+                "XX2X-XX_volpe": null,
+            },
+        },
+    },
+}

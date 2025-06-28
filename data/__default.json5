@@ -1,0 +1,187 @@
+{
+    // --------------------------------------------------------------------------------
+    // ----- About
+    "about": {
+        "name": "Junior McJohnson",
+        "profession": "CEO and Security Expert",
+        "details": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        ],
+        "email": "contact@example.com",
+        "location": "Somewhere, Here",
+        "phone": "+46852516445",
+        "phoneLabel": "(+46) 852 516 445",
+        "socials": {
+            // "30_portfolio": {
+            //     "icon": "Material_Design_Icons/web.svg",
+            //     "link": "https://www.example.com",
+            //     "linkLabel": "example.com",
+            // },
+            "20_linkedin": {
+                "icon": "Material_Design_Icons/linkedin.svg",
+                "link": "https://www.linkedin.com/in/",
+                "linkLabel": "linkedin.com/in/",
+            },
+            "10_github": {
+                "icon": "Material_Design_Icons/github.svg",
+                "link": "https://www.github.com/",
+                "linkLabel": "github.com/",
+            },
+        },
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Aside Content
+    "asideSections": {
+        "20_skills": {
+            "title": "Skills",
+            "icon": "Material_Design_Icons/auto-fix.svg",
+            "subsections": {
+                "0030_competencies": {
+                    "title": "Competencies",
+                    "details": [
+                        { "label": "Phasellus Tincidunt", },
+                        { "label": "Aliquam Sed", },
+                        { "label": "Nullam Elementum", },
+                        { "label": "Praesent Euismod", },
+                        { "label": "Mauris Dapibus", },
+                    ],
+                },
+                "0020_technologies": {
+                    "title": "Technologies",
+                    "details": [
+                        { "label": "Consectetur Nunc", },
+                        { "label": "Fusce Porta", },
+                        { "label": "Maecenas", },
+                        { "label": "Etiam Et Dui", },
+                        { "label": "Aliquam", },
+                        { "label": "Vivamus Dapibus", },
+                    ],
+                },
+                "0010_languages": {
+                    "title": "Languages",
+                    "details": [
+                        { "label": "Accumsan", },
+                        { "label": "Vivamus", },
+                    ],
+                },
+            },
+        },
+        "10_interests": {
+            "title": "Interests",
+            "icon": "Material_Design_Icons/account.svg",
+            "subsections": {
+                "0010_interests": {
+                    "title": "",
+                    "details": [
+                        { "icon": "Material_Design_Icons/target.svg", "label": "Acutus Sagittarius", },
+                        { "icon": "Material_Design_Icons/robot.svg", "label": "Dui Automata", },
+                        { "icon": "Material_Design_Icons/shield-lock-outline.svg", "label": "Domus Custodia", },
+                        { "icon": "Material_Design_Icons/airplane.svg", "label": "Aenean", },
+                        { "icon": "Material_Design_Icons/image-filter-hdr.svg", "label": "Ruinam Artificium", },
+                    ],
+                },
+            },
+        },
+    },
+    // --------------------------------------------------------------------------------
+    // ----- Main Content
+    "mainSections": {
+        "30_experiences": {
+            "title": "Experience",
+            "icon": "Material_Design_Icons/briefcase-variant.svg",
+            "subsections": {
+                "XX2X-XX_alfa-acta": {
+                    "date": "XX2X - Present",
+                    "title": "Chief Executive Officer",
+                    "company": "ALFA ACTA",
+                    "location": "Somewhere, Here",
+                    "locationType": "Hybrid",
+                    "link": "https://www.example.com",
+                    "linkLabel": "example.com",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+                "XX1X-XX_product-dev": {
+                    "date": "XX1X - XXXX",
+                    "title": "Head of Product Development",
+                    "company": "Defense Systems Inc.",
+                    "location": "Somewhere, There",
+                    "locationType": "On-site",
+                    "link": "",
+                    "linkLabel": "",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+            },
+        },
+        "20_projects": {
+            "title": "Projects",
+            "icon": "Material_Design_Icons/cogs.svg",
+            "subsections": {
+                "XX3X-XX_peace-center": {
+                    "date": "XX3X - Present",
+                    "title": "Arena Architect & Project Manager",
+                    "company": "P.E.A.C.E. Center",
+                    "location": "",
+                    "locationType": "",
+                    "link": "https://www.example.com",
+                    "linkLabel": "example.com",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+                "XX2X-XX_volpe": {
+                    "date": "XX2X - XXXX",
+                    "title": "VOLPE Arena Tech. Collaboration",
+                    "company": "",
+                    "location": "",
+                    "locationType": "",
+                    "link": "https://www.example.com",
+                    "linkLabel": "example.com",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+                "XX1X-XX_olfactory": {
+                    "date": "XX1X - XXXX",
+                    "title": "Advanced Olfactory Targeting System™",
+                    "company": "",
+                    "location": "",
+                    "locationType": "",
+                    "link": "",
+                    "linkLabel": "",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+            },
+        },
+        "10_education": {
+            "title": "Education",
+            "icon": "Material_Design_Icons/school.svg",
+            "subsections": {
+                "XX1X-XX_university": {
+                    "date": "XX1X - XXXX",
+                    "title": "Praesent Odio Vitae Metus, Fermentum Vel",
+                    "company": "Justo Sollicitudin, University",
+                    "location": "Somewhere, Else",
+                    "locationType": "",
+                    "link": "https://example.edu",
+                    "linkLabel": "example.edu",
+                    "details": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    ],
+                },
+            },
+        },
+    },
+}

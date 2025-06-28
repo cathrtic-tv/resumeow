@@ -1,0 +1,53 @@
+@use "../_mixins" as *;
+
+:root {
+    --clr__background-base: #ffffff;
+    --clr__background-subtle: #e8e8e8;
+    --clr__background-subtler: #d1d1d1;
+
+    --clr__text-base: #141515;
+    --clr__text-subtle: #333636;
+    --clr__text-subtler: #535757;
+
+    --clr__primary-base: #9405c3;
+    --clr__primary-subtle: #77069c;
+    --clr__primary-subtler: #660686;
+
+    --clr__secondary-base: #0a0a0a;
+    --clr__secondary-subtle: #2c272e;
+    --clr__secondary-subtler: #3a313d;
+
+    --clr__ats-vaiiya__secondary-base: #9e1616;
+    --clr__ats-vaiiya__secondary-subtle: #ad1111;
+    --clr__ats-vaiiya__secondary-subtler: #cc0606;
+}
+
+.mod--clr-ats-vaiiya {
+    --clr__primary-base: hsl(0, 0%, 5%);
+    --clr__primary-subtle: hsl(0, 0%, 10%);
+    --clr__primary-subtler: hsl(0, 0%, 15%);
+
+    --clr__secondary-base: hsl(352, 70%, 50%);
+    --clr__secondary-subtle: hsl(352, 70%, 45%);
+    --clr__secondary-subtler: hsl(352, 70%, 40%);
+}
+
+.mod--clr-ats-holtow {
+    --clr__primary-base: hsl(0, 0%, 5%);
+    --clr__primary-subtle: hsl(0, 0%, 10%);
+    --clr__primary-subtler: hsl(0, 0%, 15%);
+
+    --clr__secondary-base: hsl(27, 94%, 50%);
+    --clr__secondary-subtle: hsl(27, 94%, 45%);
+    --clr__secondary-subtler: hsl(27, 94%, 40%);
+}
+
+.mod--clr-designed-engimo {
+    --clr__primary-base: hsl(186, 30%, 55%);
+    --clr__primary-subtle: hsl(186, 30%, 50%);
+    --clr__primary-subtler: hsl(186, 30%, 45%);
+
+    --clr__secondary-base: hsl(186, 30%, 10%);
+    --clr__secondary-subtle: hsl(186, 30%, 15%);
+    --clr__secondary-subtler: hsl(186, 30%, 20%);
+}
