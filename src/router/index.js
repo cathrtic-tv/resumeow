@@ -76,7 +76,7 @@ router.beforeEach((to, from, next) => {
 
     const pathLength = to.path.split('/').length;
     if (pathLength > 2) {
-        document.title = `Résuméow${to.path.split('/').join(' - ').replaceAll('_', '')}`;
+        document.title = `Résuméow${to.path.split('/').join(' - ').replaceAll('_', '★ ')}`;
     } else {
         document.title = `Résuméow - ${to.name}`;
     }

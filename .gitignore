@@ -2,7 +2,9 @@
 .vscode/
 node_modules/
 node_outputs/
-.env
+
+.env*
+!.env*.example
 
 
 ##### Vue.js #####

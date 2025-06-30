@@ -8,9 +8,6 @@ import * as args from './_args.js';
 
 // ------------------------------------------------------------------------------------------
 async function main() {
-    console.log(strings.banner('RUNNING DEV MODE...'));
-    console.log('Executing...');
-
     const color = '#576157';
     const titlePrefix = `${strings.NAME} (${args.PORT}) | `;
     const commands = [
@@ -36,8 +33,13 @@ async function main() {
 
         execSync(terminalCommand);
     }
-
-    console.log();
 }
 
+
+// ------------------------------------------------------------------------------------------
+console.log(strings.banner('RUNNING DEV MODE...'));
+console.log('Executing...');
+
 await main();
+
+console.log();

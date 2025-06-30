@@ -38,7 +38,7 @@ onMounted(() => {
 
     <ul class="resume-list">
         <li class="resume-list__item">
-            <div class="resume-list__name">★&nbsp;&nbsp;Default</div>
+            <div class="resume-list__name">★★&nbsp;&nbsp;Default</div>
             <div class="resume-list__buttons">
                 <template v-for="route in routesResumeAts">
                     <ButtonText :class="`is--clr-modifier mod--clr-${route.name}`" :href="`${route.urlPath}`">{{ route.filename }}</ButtonText>

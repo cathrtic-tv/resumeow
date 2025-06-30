@@ -13,7 +13,7 @@ const ARGS = yargs(hideBin(process.argv))
     .usage(
         strings.banner('DEV MODE HELP')
         + '\n' + 'Usage:'
-        + '\n' + strings.padL(`${chalk.yellowBright('npm')} deploy ${chalk.gray('--env')} ${chalk.blueBright(`"./path/to/.env"`)}`)
+        + '\n' + strings.padL(`${chalk.yellowBright('npm')} run dev ${chalk.gray('--env')} ${chalk.blueBright(`"./path/to/.env"`)}`)
     )
 
     .hide('version')

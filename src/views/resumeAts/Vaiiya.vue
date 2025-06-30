@@ -25,7 +25,8 @@ loadJson();
         <h1 class="header__header">{{ jsonData.about.name }}</h1>
 
         <div class="header__subheader">
-            <div class="header__subheader-item">{{ jsonData.about.location }}</div>
+            <div v-if="jsonData.about.profession" class="header__subheader-item">{{ jsonData.about.profession }}</div>
+            <div v-if="jsonData.about.location" class="header__subheader-item">{{ jsonData.about.location }}</div>
         </div>
             
         <ul class="header__contacts">
