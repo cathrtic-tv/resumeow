@@ -6,9 +6,9 @@ defineProps({
 
 
 <template>
-    <div class="subsection">
-        <div class="subsection__header">
-            <div class="subsection__header-left">
+    <div class="subsection-regular">
+        <div class="subsection-regular__header">
+            <div class="subsection-regular__header-left">
                 <template v-if="data.company">
                     <h3>
                         <a v-if="data.link" :href="data.link" target="_blank">
@@ -30,7 +30,7 @@ defineProps({
                 </template>
             </div>
 
-            <div class="subsection__header-right">
+            <div class="subsection-regular__header-right">
                 <div v-if="data.date">{{ data.date }}</div>
                 <div v-if="data.location">
                     <span>{{ data.location }}</span>                    
@@ -40,11 +40,10 @@ defineProps({
             </div>
         </div>
 
-        <div class="subsection__content">
-            <ul class="subsection__content-list">
+        <div class="subsection-regular__content">
+            <ul class="subsection-regular__content-list">
                 <template v-for="detail in data.details">
-                    <li v-if="typeof detail === 'object'" v-html="detail.label"></li>
-                    <li v-else v-html="detail"></li>
+                    <li v-html="detail"></li>
                 </template>
             </ul>
             <slot></slot>
@@ -54,7 +53,7 @@ defineProps({
 
 
 <style lang="scss" scoped>
-.subsection {
+.subsection-regular {
     & + & {
         padding-top: 0.5rem;
     }
@@ -120,49 +119,6 @@ defineProps({
 
         &-list {
             padding-left: 1.5rem;
-        }
-    }
-
-    &.is--series {
-        display: flex;
-        align-items: end;
-
-        & + & {
-            padding-top: 0;
-        }
-
-        .subsection {
-            &__header {
-                padding-right: 0.25rem;
-
-                &-left {
-                    > :last-child::after {
-                        content: ': ';
-                    }
-                }
-
-                &-right {
-                    display: none;
-                }
-            }
-
-            &__content {
-                padding-top: 0;
-
-                &-list {
-                    padding-left: 0;
-                    list-style: none;
-                    display: flex;
-
-                    li {
-                        padding: 0;
-
-                        &:not(:first-child)::before {
-                            content: ', ';
-                        }
-                    }
-                }
-            }
         }
     }
 }

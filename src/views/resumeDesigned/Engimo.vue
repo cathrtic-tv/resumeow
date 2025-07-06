@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Section from '@/components/resumeDesigned/Section.vue';
-import Subsection from '@/components/resumeDesigned/Subsection.vue';
+import SubsectionRegular from '@/components/resumeDesigned/SubsectionRegular.vue';
+import SubsectionLabels from '@/components/resumeDesigned/SubsectionLabels.vue';
 import { loadJsonData, sortContent } from '@/utils/resumeUtils.js';
 
 const route = useRoute();
@@ -57,13 +58,13 @@ loadJson();
     <div class="wrapper">
         <main class="main">
             <Section v-for="section in sortContent(jsonData.mainSections)" :key="section.title" :data="section">
-                <Subsection v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></Subsection>
+                <SubsectionRegular v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></SubsectionRegular>
             </Section>
         </main>
 
         <aside class="aside">
             <Section v-for="section in sortContent(jsonData.asideSections)" :key="section.title" :data="section">
-                <Subsection v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection" class="is--labels"></Subsection>
+                <SubsectionLabels v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></SubsectionLabels>
             </Section>
             <Section :data="{ title: 'References', icon: 'Material_Design_Icons/contacts.svg' }">
                 Available upon request.
@@ -181,7 +182,7 @@ loadJson();
         padding-right: 1.75rem;
         flex: 0 0 35%;
 
-        section:last-of-type {
+        .section:last-of-type {
             .section__content {
                 padding: 0.25rem 1rem;
                 font-weight: bold;

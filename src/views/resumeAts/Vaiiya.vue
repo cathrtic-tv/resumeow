@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Section from '@/components/resumeAts/Section.vue';
-import Subsection from '@/components/resumeAts/Subsection.vue';
+import SubsectionRegular from '@/components/resumeAts/SubsectionRegular.vue';
+import SubsectionLabels from '@/components/resumeAts/SubsectionLabels.vue';
 import { loadJsonData, sortContent } from '@/utils/resumeUtils.js';
 
 const route = useRoute();
@@ -49,10 +50,10 @@ loadJson();
             </p>
         </Section>
         <Section v-for="section in sortContent(jsonData.asideSections)" v-show="section.title == 'Skills'" :key="section.title" :data="section">
-            <Subsection v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection" class="is--series"></Subsection>
+            <SubsectionLabels v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></SubsectionLabels>
         </Section>
         <Section v-for="section in sortContent(jsonData.mainSections)" :key="section.title" :data="section">
-            <Subsection v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></Subsection>
+            <SubsectionRegular v-for="subsection in sortContent(section.subsections)" :key="subsection.title" :data="subsection"></SubsectionRegular>
         </Section>
         <Section :data="{ title: 'References' }">
             <p>Available upon request.</p>
