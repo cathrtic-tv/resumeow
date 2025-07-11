@@ -12,10 +12,9 @@ const resumeFiles = ref([]);
 const formatFileName = (name) => {
     const addStar = name.startsWith('_');
 
-    name = name.replaceAll('_', '')
-    name = name.replaceAll('-', ' ')
-    name = name.replace(/([a-z])([A-Z])/g, '$1 $2')
-    name = name.replace(/^./, str => str.toUpperCase());    
+    name = name.replaceAll('_', '');
+    name = name.replaceAll('-', ' ');
+    name = name.replace(/([a-z])([A-Z])/g, '$1 $2');
 
     if (addStar) { name = '★&nbsp;&nbsp;' + name; }
     return name;
@@ -38,8 +37,8 @@ onMounted(() => {
 
     <ul class="resume-list">
         <li class="resume-list__item">
-            <div class="resume-list__name">★★&nbsp;&nbsp;Default</div>
-            <div class="resume-list__buttons">
+            <div class="resume-list__item-name">★★&nbsp;&nbsp;Default</div>
+            <div class="resume-list__item-buttons">
                 <template v-for="route in routesResumeAts">
                     <ButtonText :class="`is--clr-modifier mod--clr-${route.name}`" :href="`${route.urlPath}`">{{ route.filename }}</ButtonText>
                 </template>
@@ -52,8 +51,8 @@ onMounted(() => {
 
         <template v-for="file in resumeFiles" :key="file.name">            
             <li class="resume-list__item" v-if="file.name !== '__default'">
-                <div class="resume-list__name" v-html="formatFileName(file.name)"></div>
-                <div class="resume-list__buttons">
+                <div class="resume-list__item-name" v-html="formatFileName(file.name)"></div>
+                <div class="resume-list__item-buttons">
                     <template v-for="route in routesResumeAts">
                         <ButtonText :class="`is--clr-modifier mod--clr-${route.name}`" :href="`${route.urlPath}/${file.name}`">{{ route.filename }}</ButtonText>
                     </template>
@@ -93,23 +92,29 @@ onMounted(() => {
         &__item {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
             padding: 0.5rem 0.5rem 0.5rem 0.75rem;
             border-radius: 0.5rem;
             background: var(--clr__background-subtle);
-        }
 
-        &__buttons {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-left: auto;  
-            text-transform: uppercase;
-        }
+            &-name {
+                flex: 0 0 fit-content;
+                text-transform: uppercase;
+                font-weight: bold;            
+                width: 10rem;
+                padding-left: 0.5rem;
+            }
 
-        &__name {
-            font-weight: bold;            
-            width: 10rem;
-            padding-left: 0.5rem;
+            &-buttons {
+                flex: 1 1 auto;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.5rem;
+                text-transform: uppercase;
+            }
         }
     }
 }
