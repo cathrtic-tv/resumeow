@@ -11,21 +11,15 @@ defineProps({
             <div class="subsection-regular__header-left">
                 <template v-if="data.company">
                     <h3>
-                        <a v-if="data.link" :href="data.link" target="_blank">
-                            {{ data.company }}
-                            <span v-if="data.linkLabel">({{ data.linkLabel }})</span>
-                        </a>
-                        <span v-else>{{ data.company }}</span>                    
+                        <span>{{ data.company }}</span>
+                        <a v-if="data.link" :href="data.link" target="_blank">({{ data.linkLabel }})</a>                                      
                     </h3>
                     <div v-if="data.title">{{ data.title }}</div>
                 </template>
                 <template v-else>
                     <h3>
-                        <a v-if="data.link" :href="data.link" target="_blank">
-                            {{ data.title }}
-                            <span v-if="data.linkLabel">({{ data.linkLabel }})</span>
-                        </a>
-                        <span v-else>{{ data.title }}</span>       
+                        <span>{{ data.title }}</span>
+                        <a v-if="data.link" :href="data.link" target="_blank">({{ data.linkLabel }})</a>       
                     </h3>
                 </template>
             </div>
@@ -69,47 +63,40 @@ defineProps({
             > * {
                 display: flex;
                 align-items: center;
+                gap: 0.25rem;
             }
 
             a {
                 text-decoration: none;
-                color: var(--clr__text-base);
-
-                > span {
-                    color: var(--clr__text-subtle);
-                }
+                color: var(--clr__text-subtle);
             }
         }
 
         &-left {
             align-items: start;
 
-            > :last-child {
-                font-weight: bold;
-                font-style: normal;
-                gap: 0.25rem;
-            }
-
             > :first-child {
                 font-weight: bold;
                 font-style: normal;
-                gap: 0;
+            }
+
+            > :last-child {
+                font-weight: bold;
+                font-style: normal;
             }
         }
 
         &-right {
             align-items: end;
 
-            > :last-child {
-                font-weight: normal;
-                font-style: italic;
-                gap: 0.25rem;
-            }
-
             > :first-child {
                 font-weight: bold;
                 font-style: normal;
-                gap: 0;
+            }
+
+            > :last-child {
+                font-weight: normal;
+                font-style: italic;
             }
         }
     }
