@@ -75,12 +75,12 @@ defineProps({
         &-left {
             align-items: start;
 
-            > :first-child {
+            > * {
                 font-weight: bold;
                 font-style: normal;
             }
 
-            > :last-child {
+            > :first-child {
                 font-weight: bold;
                 font-style: normal;
             }
@@ -89,14 +89,14 @@ defineProps({
         &-right {
             align-items: end;
 
+            > * {
+                font-weight: normal;
+                font-style: italic;
+            }
+
             > :first-child {
                 font-weight: bold;
                 font-style: normal;
-            }
-
-            > :last-child {
-                font-weight: normal;
-                font-style: italic;
             }
         }
     }
