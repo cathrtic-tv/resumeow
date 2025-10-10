@@ -11,10 +11,10 @@ const resumeFiles = ref([]);
 
 const formatFileName = (name) => {
     const addStar = name.startsWith('_');
-
     name = name.replaceAll('_', '');
     name = name.replaceAll('-', ' ');
     name = name.replace(/([a-z])([A-Z])/g, '$1 $2');
+    name = name.replace(/\b\w/g, char => char.toUpperCase());
 
     if (addStar) { name = '★&nbsp;&nbsp;' + name; }
     return name;
@@ -35,7 +35,7 @@ onMounted(() => {
 <template>
     <Hero></Hero>
 
-    <ul class="resume-list">
+    <ul id="resume-list" class="resume-list">
         <li class="resume-list__item">
             <div class="resume-list__item-name">★★&nbsp;&nbsp;Default</div>
             <div class="resume-list__item-buttons">

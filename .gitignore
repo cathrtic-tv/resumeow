@@ -1,10 +1,13 @@
-##### Resumeow #####
+##### Résuméow #####
 .vscode/
 node_modules/
 node_outputs/
 
 .env*
 !.env*.example
+
+console.ansi
+console.log
 
 
 ##### Vue.js #####

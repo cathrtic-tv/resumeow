@@ -11,9 +11,8 @@ import ButtonIcon from '@/components/ui/button/ButtonIcon.vue';
         </div>
         <div class="footer__right">
             <ButtonIcon class="is--rounded is--transparent" href="https://github.com/cathrtic-tv" target="_blank" icon="Simple_Icons/github.svg"></ButtonIcon>
-            <ButtonIcon class="is--rounded is--transparent" href="https://x.com/CathRTic_tv" target="_blank" icon="Simple_Icons/x.svg"></ButtonIcon>
             <ButtonHybrid class="is--rounded" href="https://ko-fi.com/CathRTic_tv" target="_blank" icon="Simple_Icons/kofi.svg">
-                Support Me
+                Support me on ko-fi
             </ButtonHybrid>
         </div>
     </footer>

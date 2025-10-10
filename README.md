@@ -1,6 +1,11 @@
 # Résuméow - Résumé Manager
-<picture><img src=".github/README/Banner.png" width="1024"></picture><br><br>
-Create and maintain multiple professional résumé versions, using json data.\
+<div>
+    <picture><img src=".github/README/resumeow.png" width="1024" height="170"></picture>
+</div>
+
+<br>
+
+Create, maintain, and generate multiple professional résumé versions, using json data.\
 Résuméow allows for tailored résumés with a single source of truth (SSOT), and provides a number of styles to choose from.
 
 
@@ -13,23 +18,32 @@ Package Installation:
 npm install
 ```
 
-Running the app:
+Run as local webapp:
 ```shell
 npm run dev
-# or
-npx vite
 ```
 
-<br>
-
-> [!NOTE]
-> Remember to create your `.env` file.
+Generate PDF files:
+```shell
+npm run main
+```
 
 <br>
 
 This project uses npm, and was last tested using `Node.js v22.16.0` and `npm 10.8.1`.
 > If you're having trouble, find your versions by running `node -v` and `npm -v` respectively.\
 > You can download and update Node.js, which includes npm, [here](https://nodejs.org/en/download).
+
+
+
+<br>
+
+## Environment Variables
+The following environment variables are set by default:
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| `OUTPUT_PATH` | [`"./node_outputs/.env"`](/node_outputs/.env) | Output location for logs and saved PDFs. |
+| `PORT` | [`3000`](http://localhost:3000) | The port number used for vite when using `npm run dev`.<br>PORT + 1, is used when running `npm run main`. |
 
 
 

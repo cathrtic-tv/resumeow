@@ -4,7 +4,7 @@
     "about": {
         "details": [
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-            "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
         ],
     },
     // --------------------------------------------------------------------------------
@@ -32,7 +32,7 @@
                 "XX2X-XX_alfa-acta": {
                     "details": [
                         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
                     ],
                 },
             },
@@ -51,24 +51,7 @@
                     "linkLabel": "reachthefinals.com",
                     "details": [
                         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-                    ],
-                },
-            },
-        },
-        "10_education": {
-            "subsections": {
-                "XX0X-XX_college": {
-                    "date": "XX0X - XXXX",
-                    "title": "Donec Viverra Et Aspernatur",
-                    "company": "Lacus Imperdiet, College",
-                    "location": "Somewhere, There",
-                    "locationType": "",
-                    "link": "https://example.edu",
-                    "linkLabel": "example.edu",
-                    "details": [
-                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+                        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
                     ],
                 },
             },
