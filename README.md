@@ -43,7 +43,7 @@ The following environment variables are set by default:
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
 | `OUTPUT_PATH` | [`"./node_outputs/.env"`](/node_outputs/.env) | Output location for logs and saved PDFs. |
-| `PORT` | [`3000`](http://localhost:3000) | The port number used for vite when using `npm run dev`.<br>PORT + 1, is used when running `npm run main`. |
+| `PORT` | [`3000`](http://localhost:3000) | The port number used for vite when running `npm run dev`.<br>PORT + 1, is used when running `npm run main`. |
 
 
 

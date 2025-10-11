@@ -74,12 +74,11 @@ router.beforeEach((to, from, next) => {
     const appElement = document.getElementById('app');
     appElement.className = `view--${to.name || 'default'} mod--clr-${to.name || 'default'}`;
 
-    const pathLength = to.path.split('/').length;
-    if (pathLength > 2) {
-        document.title = `Résuméow${to.path.split('/').map(segment => segment.replaceAll('-', ' ').replaceAll('_', '★ ')).join(' - ')}`;
-    } else {
-        document.title = `Résuméow - ${to.name}`;
-    }
+    let name = to.name;
+    name = name.replaceAll('-', ' ');
+    name = name.replace(/([a-z])([A-Z])/g, '$1 $2');
+    name = name.replace(/\b\w/g, char => char.toUpperCase());
+    document.title = `${name} - Résuméow`;
 });
 
 export default router;

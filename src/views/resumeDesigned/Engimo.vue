@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Section from '@/components/resumeDesigned/Section.vue';
@@ -18,6 +18,12 @@ async function loadJson() {
     jsonData.value = await loadJsonData(route.path);
 }
 loadJson();
+
+watch(() => jsonData.value.about.name,
+    (newName) => {        
+        document.title = `${newName} - Résumé`;
+    }
+);
 </script>
 
 

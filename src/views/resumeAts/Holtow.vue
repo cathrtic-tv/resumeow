@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Section from '@/components/resumeAts/Section.vue';
@@ -18,6 +18,12 @@ async function loadJson() {
     jsonData.value = await loadJsonData(route.path);
 }
 loadJson();
+
+watch(() => jsonData.value.about.name,
+    (newName) => {        
+        document.title = `${newName} - Résumé`;
+    }
+);
 </script>
 
 
@@ -44,7 +50,7 @@ loadJson();
     </header>
 
     <div class="wrapper">
-        <Section :data="{ title: 'Professional Summary' }">
+        <Section :data="{ title: '' }">
             <p>
                 <span v-for="detail in jsonData.about.details" v-html="`${detail} `"></span>
             </p>
