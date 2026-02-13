@@ -4,27 +4,44 @@ import chalk from 'chalk';
 import fs from 'fs-extra';
 import stripAnsi from 'strip-ansi';
 
-import * as args from './_args.js';
+
+// ------------------------------------------------------------------------------------------
+export let NAME;
+export let DISPLAY_NAME;
+export let AUTHOR;
+export let VERSION;
+export let DESCRIPTION;
+let doLogStream;
+let logStreamAnsi;
+let logStreamText;
 
 
 // ------------------------------------------------------------------------------------------
-const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-export const NAME = pkg.displayName;
-export const AUTHOR = pkg.author;
-export const VERSION = pkg.version;
+export function initialize(argsOutputPath, argsDoLog) {
+    const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    NAME = pkg.name;
+    DISPLAY_NAME = pkg.displayName;
+    AUTHOR = pkg.author;
+    VERSION = pkg.version;
+    DESCRIPTION = pkg.description;
 
-const logFilepathAnsi = posix.join(args.OUTPUT_PATH, 'console.ansi');
-const logFilepathText = posix.join(args.OUTPUT_PATH, 'console.log');
-fs.removeSync(logFilepathAnsi);
-fs.removeSync(logFilepathText);
-fs.createFileSync(logFilepathAnsi);
-fs.createFileSync(logFilepathText);
-const logStreamAnsi = fs.createWriteStream(logFilepathAnsi, { flags: 'a' });
-const logStreamText = fs.createWriteStream(logFilepathText, { flags: 'a' });
+    doLogStream = argsDoLog;
+    const logFilepathAnsi = posix.join(argsOutputPath, 'console.ansi');
+    const logFilepathText = posix.join(argsOutputPath, 'console.log');
+    fs.removeSync(logFilepathAnsi);
+    fs.removeSync(logFilepathText);
+    if (doLogStream) {
+        fs.createFileSync(logFilepathAnsi);
+        fs.createFileSync(logFilepathText);
+        logStreamAnsi = fs.createWriteStream(logFilepathAnsi, { flags: 'a' });
+        logStreamText = fs.createWriteStream(logFilepathText, { flags: 'a' });
+    }
+}
 
 
 // ------------------------------------------------------------------------------------------
 export function log(text = '', { doConsole = true, doStream = true } = {}) {
+    // Empty lines shorthand
     if (typeof text === 'number') {
         text = '\n'.repeat(text - 1);
     }
@@ -32,7 +49,7 @@ export function log(text = '', { doConsole = true, doStream = true } = {}) {
     if (doConsole) {
         console.log(text);
     }
-    if (doStream) {
+    if (doLogStream && doStream) {
         logStreamAnsi.write(text + '\n');
         logStreamText.write(stripAnsi(text) + '\n');
     }
@@ -62,7 +79,7 @@ export function indent(text, { level = 1, right = false } = {}) {
 }
 
 export function banner(text) {
-    const line1Left = indent(`${NAME} - ${AUTHOR}`);
+    const line1Left = indent(`${DISPLAY_NAME} - ${AUTHOR}`);
     const line1Right = indent(chalk.gray(``), { right: true });
     const line2Left = indent(chalk.gray(`${text.toUpperCase()}...`));
     const line2Right = indent(chalk.gray(`v${VERSION}`), { right: true });

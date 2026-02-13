@@ -1,16 +1,25 @@
 // ------------------------------------------------------------------------------------------
 import { posix } from 'path';
 import { globSync } from 'glob';
-import { spawn } from 'child_process';
-import kill from 'tree-kill';
 import fs from 'fs-extra';
-import url from 'url';
 import chalk from 'chalk';
 import puppeteer from 'puppeteer';
 import * as cheerio from 'cheerio';
+import { createServer } from 'vite';
 
-import * as args from './_args.js';
-import * as strs from './_strs.js';
+import * as args from './args.js';
+import * as strs from '../node_utils/strs.js';
+
+
+// ------------------------------------------------------------------------------------------
+const wipeBlacklist = [
+    'console.ansi',
+    'console.log',
+];
+
+let server;
+let browser;
+let shuttingDown = false;
 
 
 // ------------------------------------------------------------------------------------------
@@ -22,8 +31,7 @@ async function main() {
     strs.log(strs.bullet(`Cleaning up: ${chalk.yellowBright(`'${args.OUTPUT_PATH}'`)}`));
 
     const toWipeLogMax = 10;
-    const toWipeBlacklist = ['console.ansi', 'console.log',];
-    const toWipeList = globSync('**/*', { cwd: args.OUTPUT_PATH, dot: true, ignore: toWipeBlacklist });
+    const toWipeList = globSync('**/*', { cwd: args.OUTPUT_PATH, dot: true, ignore: wipeBlacklist });
     for (const [index, toWipeItem] of toWipeList.entries()) {
         fs.removeSync(posix.join(args.OUTPUT_PATH, toWipeItem));
         strs.log(strs.bullet(`${chalk.red(`'${toWipeItem}'`)}`, { level: 1, style: '-X' }), { doConsole: ((index < toWipeLogMax)) });
@@ -36,14 +44,20 @@ async function main() {
 
     // -- Start Vite and Puppeteer
     strs.log();
-    const port = (parseInt(args.PORT) + 1).toString();
-    const vite = spawn('npx', ['vite', '--port', port], {
-        shell: true,
-        stdio: 'inherit'
-    });
+    strs.log(strs.bullet(`Starting Vite`));
 
+    const port = (parseInt(args.PORT) + 1).toString();
     const baseUrl = `http://localhost:${port}`;
-    const browser = await puppeteer.launch();
+    server = await createServer({
+        server: {
+            port: port,
+            open: false
+        }
+    });
+    await server.listen();
+    strs.log(strs.bullet(`Running at: ${chalk.cyanBright(`'${baseUrl}'`)}`));
+
+    browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto(baseUrl, { waitUntil: 'networkidle0' });
@@ -66,7 +80,7 @@ async function main() {
             const outputPath = posix.join(args.OUTPUT_PATH, resumePath);
             fs.ensureDirSync(outputPath);
 
-            await page.goto(url.resolve(baseUrl, href), { waitUntil: 'networkidle0' });
+            await page.goto(new URL(href, baseUrl).href, { waitUntil: 'networkidle0' });
             await page.pdf({
                 path: posix.join(outputPath, `${name}.pdf`),
                 format: 'A4',
@@ -75,15 +89,26 @@ async function main() {
             strs.log(strs.bullet(chalk.blueBright(`'${posix.join(resumePath, `${name}.pdf`)}'`), { level: 1, style: '->' }));
         }
     }
+}
 
-
-    // -- Close Vite and Puppeteer
-    await browser.close();
-    kill(vite.pid, 'SIGTERM');
+async function shutdown() {
+    if (shuttingDown) { return; }
+    shuttingDown = true;
+    
+    strs.log();
+    strs.log(strs.bullet(`Shutting down...`));
+    if (browser) { await browser.close(); }
+    if (server) { await server.close(); }
+    
+    strs.log(2, { doStream: false });
+    process.exit(0);
 }
 
 
 // ------------------------------------------------------------------------------------------
+args.initialize();
+strs.initialize(args.OUTPUT_PATH, args.DO_LOG);
+
 strs.log(strs.banner('Running Main'));
 await main();
-strs.log(2, { doStream: false });
+await shutdown();

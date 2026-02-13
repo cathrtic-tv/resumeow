@@ -4,10 +4,7 @@ node_modules/
 node_outputs/
 
 .env*
-!.env*.example
-
-console.ansi
-console.log
+!.env.example*
 
 
 ##### Vue.js #####
